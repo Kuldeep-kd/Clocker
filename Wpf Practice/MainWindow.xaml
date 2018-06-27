@@ -1,0 +1,93 @@
+﻿<Window x:Class="Wpf_Practice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_Practice"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Opacity="{Binding WindowOpacity}"
+        x:Name="Clock"
+        Background="Transparent"
+        WindowState="Normal"
+        Title="MainWindow" Height="450" Width="230">
+
+    <Border BorderThickness="1.5" BorderBrush="Black" Background="#333333"  CornerRadius="20">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="20 June 2018" 
+                   FontSize="35" 
+                   FontFamily="DistrictThin" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top" 
+                   Foreground="#efefef"
+                   x:Name="TxtDate"/>
+            <TextBlock Text="40" 
+                   FontSize="150" 
+                   FontFamily="DistrictThin" 
+                   Margin="6,-10,24,-10"
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   Foreground="#efefef"
+                   Width="200"
+                   x:Name="TxtHour"/>
+            <TextBlock Text="40" 
+                   FontSize="150" 
+                   FontFamily="DistrictThin" 
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   Margin="6,-40,21,-10"
+                   Foreground="#efefef"
+                   x:Name="TxtMinutes" Width="200"/>
+            <TextBlock Text="40" 
+                   FontSize="20" 
+                   FontFamily="DistrictThin" 
+                   VerticalAlignment="Top" 
+                   Margin="0 -20 80 0"
+                   HorizontalAlignment="Right"
+                   Foreground="#efefef"
+                   x:Name="TxtSeconds"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <StackPanel Orientation="Vertical" Margin="0 0 3 0">
+                <TextBlock Text="Nagpur" 
+                   FontSize="17" 
+                   FontFamily="DistrictThin" 
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Right"
+                   Margin="0 10 0 0"
+                   Foreground="#efefef"/>
+                <TextBlock Text="Maharashtra" 
+                   FontSize="15" 
+                   FontFamily="DistrictThin" 
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Right"
+                   Margin="0 0 0 0"
+                   Foreground="#efefef"/>
+                </StackPanel>
+                <Image x:Name="WeatherImage" 
+                       Source="{Binding WeatherImage}"  
+                       RenderOptions.BitmapScalingMode="HighQuality" 
+                       Width="60" 
+                       HorizontalAlignment="Right"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="28 ºC"
+                   FontSize="25" 
+                   FontFamily="DistrictThin" 
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Left"
+                   Margin="0 10 0 0"
+                   Foreground="#efefef"/>
+                <Image x:Name="TempratureImage" 
+                       Source="{Binding TempratureImage}"  
+                       RenderOptions.BitmapScalingMode="HighQuality"
+                       Width="40"
+                       HorizontalAlignment="Right"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>
