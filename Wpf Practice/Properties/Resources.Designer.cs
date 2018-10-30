@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Wpf_Practice.Properties
-{
-
-
+namespace Wpf_Practice.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,52 +19,76 @@ namespace Wpf_Practice.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Wpf_Practice.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;Cities&gt;
+        ///  &lt;name&gt;
+        ///    &lt;lat&gt;18.975&lt;/lat&gt;
+        ///    &lt;lon&gt;72.825833&lt;/lon&gt;
+        ///    &lt;name&gt;Mumbai&lt;/name&gt;
+        ///    &lt;state&gt;Maharashtra&lt;/state&gt;
+        ///  &lt;/name&gt;
+        ///  &lt;name&gt;
+        ///    &lt;lat&gt;28.666667&lt;/lat&gt;
+        ///    &lt;lon&gt;77.216667&lt;/lon&gt;
+        ///    &lt;name&gt;Delhi&lt;/name&gt;
+        ///    &lt;state&gt;Delhi&lt;/state&gt;
+        ///  &lt;/name&gt;
+        ///  &lt;name&gt;
+        ///    &lt;lat&gt;12.983333&lt;/lat&gt;
+        ///    &lt;lon&gt;77.583333&lt;/lon&gt;
+        ///    &lt;name&gt;Bangalore&lt;/name&gt;
+        ///    &lt;state&gt;Karnataka&lt;/state&gt;
+        ///  &lt;/name&gt;
+        ///  &lt;name&gt;
+        ///    &lt;lat&gt;17.375278&lt;/lat&gt;
+        ///    &lt;lon&gt;78.474444&lt;/lon&gt;
+        ///    &lt;name&gt;Hyderaba [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Cities {
+            get {
+                return ResourceManager.GetString("Cities", resourceCulture);
             }
         }
     }

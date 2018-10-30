@@ -3,18 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Wpf_Practice"
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        Opacity="{Binding WindowOpacity}"
-        x:Name="Clock"
+        Opacity="0.88"
+        x:Name="WindowClock"
         Background="Transparent"
         WindowState="Normal"
-        Title="MainWindow" Height="450" Width="230">
+        ShowInTaskbar="False"
+        Topmost="False"
+        Title="Clocker" Height="550" Width="230">
 
-    <Border BorderThickness="1.5" BorderBrush="Black" Background="#333333"  CornerRadius="20">
+
+    <Border BorderThickness="1.5" BorderBrush="Black" Background="#111111"  CornerRadius="20">
         <StackPanel Orientation="Vertical">
             <TextBlock Text="20 June 2018" 
                    FontSize="35" 
@@ -46,47 +48,122 @@
                    FontSize="20" 
                    FontFamily="DistrictThin" 
                    VerticalAlignment="Top" 
-                   Margin="0 -20 80 0"
+                   Margin="0 -20 50 0"
                    HorizontalAlignment="Right"
                    Foreground="#efefef"
                    x:Name="TxtSeconds"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <StackPanel Orientation="Vertical" Margin="0 0 3 0">
-                <TextBlock Text="Nagpur" 
+                <StackPanel Orientation="Vertical" 
+                            Margin="0 0 3 0"
+                            Mouse.MouseDown="LocationChooser"
+                            x:Name="LocationPanel">
+                    <TextBlock Text="Nagpur" 
                    FontSize="17" 
                    FontFamily="DistrictThin" 
-                   VerticalAlignment="Top" 
+                   VerticalAlignment="Center" 
                    HorizontalAlignment="Right"
                    Margin="0 10 0 0"
-                   Foreground="#efefef"/>
-                <TextBlock Text="Maharashtra" 
+                   Height="20"
+                   Foreground="#efefef"
+                   x:Name="TxtCity"/>
+                    <TextBlock Text="Maharashtra" 
                    FontSize="15" 
                    FontFamily="DistrictThin" 
                    VerticalAlignment="Top" 
                    HorizontalAlignment="Right"
                    Margin="0 0 0 0"
-                   Foreground="#efefef"/>
+                   Foreground="#efefef"
+                   x:Name="TxtState"/>
                 </StackPanel>
                 <Image x:Name="WeatherImage" 
-                       Source="{Binding WeatherImage}"  
+                       Source="Images/sun.png"
+                       Margin="10 0 4 0"
                        RenderOptions.BitmapScalingMode="HighQuality" 
                        Width="60" 
                        HorizontalAlignment="Right"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="28 ºC"
-                   FontSize="25" 
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 15">
+                <TextBlock Text="28 °C  "
+                   FontSize="15"
+                   FontFamily="DistrictThin" 
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Left"
+                   Height="20"
+                   Width="40"
+                   Margin="0 10 5 0"
+                   Foreground="#bfbfbf"
+                   x:Name="TxtTempratureLow"/>
+                <TextBlock Text="28 °C  "
+                   FontSize="25"
                    FontFamily="DistrictThin" 
                    VerticalAlignment="Top" 
                    HorizontalAlignment="Left"
+                   MinHeight="10"
+                   MinWidth="10"
                    Margin="0 10 0 0"
-                   Foreground="#efefef"/>
+                   Foreground="#efefef"
+                   x:Name="TxtTemprature"/>
                 <Image x:Name="TempratureImage" 
-                       Source="{Binding TempratureImage}"  
+                       Source="Images/Temp.png"  
                        RenderOptions.BitmapScalingMode="HighQuality"
                        Width="40"
                        HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel x:Name="ComboBoxStack" IsEnabled="True" Visibility="Visible">
+                <ComboBox x:Name="CityComboBox" SelectionChanged="CityComboBox_SelectionChanged" TabIndex="0">
+                    <ComboBox.ItemsSource>
+                        <Binding Source="{StaticResource Cities}" 
+                                 XPath="./name/name"/>
+                    </ComboBox.ItemsSource>
+                </ComboBox>
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center">
+                    <Button x:Name="btnApply"
+                        Width="100"
+                        TabIndex="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="5 15 0 0"
+                        Content="Apply"
+                        Background="Black"
+                        BorderBrush="White"
+                        BorderThickness="1.6"
+                        Foreground="White"
+                        Padding="0 0 0 4"
+                        Click="btnApply_Click"/>
+                    <Slider x:Name="OpacitySlider"
+                            TabIndex="2"
+                            Width="100"
+                            Margin="10 11 10 0"
+                            VerticalAlignment="Center"
+                            ValueChanged="OpacitySlider_ValueChanged"/>
+                    
+                </StackPanel >
+                <StackPanel Orientation="Horizontal" 
+                            VerticalAlignment="Center"
+                            Margin="0 5">
+                <Button    Content="More Info"
+                           HorizontalAlignment="Left"
+                           Background="Black"
+                           Foreground="White"
+                           VerticalAlignment="Bottom"
+                           Margin="20 0 0 0"
+                           Click="btnInfo_Clicked"/>
+                <Button x:Name="btnExit"
+                        Width="100"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Margin="45 5 5 0"
+                        Content="Exit"
+                        TabIndex="3"
+                        Background="Black"
+                        BorderBrush="White"
+                        BorderThickness="1.6"
+                        Foreground="White"
+                        Padding="0 0 0 4" Click="btnExit_Click"/>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Border>

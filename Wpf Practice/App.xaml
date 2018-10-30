@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:Wpf_Practice"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary>
+        <XmlDataProvider x:Key="Cities" Source="WeatherResources/Cities.xml" XPath="Cities" IsInitialLoadEnabled="True"/>
+        <ResourceDictionary x:Key="Dictionaries">
             <ResourceDictionary.MergedDictionaries>
                 <!--Order of Dictionaries Matters-->
                 <ResourceDictionary Source="Resources/Fonts.xaml"/>
