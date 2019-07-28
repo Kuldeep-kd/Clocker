@@ -18,7 +18,7 @@ namespace Wpf_Practice
         /// <summary>
         /// Initialising the API & Required Stuffs
         /// </summary>
-        DarkSkyApi.DarkSkyService darkSky = new DarkSkyService("335501945d6fb59ad0c977a096cd99c3");
+        DarkSkyApi.DarkSkyService darkSky = new DarkSkyService("Your API Key here");
         DarkSkyApi.Models.Forecast x;
         //This finds files in the Resources and generates a Stream.
         XmlDocument xmlDocument = new XmlDocument();
