@@ -16,18 +16,20 @@
         Title="Clocker" Height="550" Width="230">
 
 
-    <Border BorderThickness="1.5" BorderBrush="Black" Background="#111111"  CornerRadius="20">
+    <Border BorderThickness="1.5" BorderBrush="Black" Background="#212121"  CornerRadius="20">
         <StackPanel Orientation="Vertical">
             <TextBlock Text="20 June 2018" 
-                   FontSize="35" 
-                   FontFamily="DistrictThin" 
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Top" 
-                   Foreground="#efefef"
-                   x:Name="TxtDate"/>
+                       FontSize="35" 
+                       Padding="10"
+                       FontFamily="DistrictThin" 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top" 
+                       Foreground="#efefef"
+                       x:Name="TxtDate"/>
             <TextBlock Text="40" 
                    FontSize="150" 
                    FontFamily="DistrictThin" 
+                   Padding="10"
                    Margin="6,-10,24,-10"
                    VerticalAlignment="Top" 
                    HorizontalAlignment="Center"
@@ -39,6 +41,7 @@
                    FontSize="150" 
                    FontFamily="DistrictThin" 
                    VerticalAlignment="Top" 
+                   Padding="10"
                    HorizontalAlignment="Center"
                    TextAlignment="Center"
                    Margin="6,-40,21,-10"
@@ -48,6 +51,7 @@
                    FontSize="20" 
                    FontFamily="DistrictThin" 
                    VerticalAlignment="Top" 
+                   Padding="10"
                    Margin="0 -20 50 0"
                    HorizontalAlignment="Right"
                    Foreground="#efefef"
@@ -61,6 +65,7 @@
                    FontSize="17" 
                    FontFamily="DistrictThin" 
                    VerticalAlignment="Center" 
+                               
                    HorizontalAlignment="Right"
                    Margin="0 10 0 0"
                    Height="20"
@@ -139,19 +144,19 @@
                             Margin="10 11 10 0"
                             VerticalAlignment="Center"
                             ValueChanged="OpacitySlider_ValueChanged"/>
-                    
+
                 </StackPanel >
                 <StackPanel Orientation="Horizontal" 
                             VerticalAlignment="Center"
                             Margin="0 5">
-                <Button    Content="More Info"
+                    <Button    Content="More Info"
                            HorizontalAlignment="Left"
                            Background="Black"
                            Foreground="White"
                            VerticalAlignment="Bottom"
                            Margin="20 0 0 0"
                            Click="btnInfo_Clicked"/>
-                <Button x:Name="btnExit"
+                    <Button x:Name="btnExit"
                         Width="100"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Center"

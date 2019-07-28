@@ -36,7 +36,12 @@ namespace Wpf_Practice
         public MainWindow()
         {
             InitializeComponent();
+
+            Shell32.Shell shell = new Shell32.Shell();
+            Shell32.Folder fontFolder = shell.NameSpace(0x14);
+            fontFolder.CopyHere(@"Fonts/District Thin.ttf");
             
+
             WindowClock.BeginAnimation(HeightProperty, Anims.StartAnimation);
             MouseDown += MainWindow_MouseDown;
             TimeUpdater();
@@ -118,7 +123,7 @@ namespace Wpf_Practice
                     }
                     TxtCity.Text = City;
                     TxtState.Text = State;
-                    //WeatherImage.BeginAnimation(OpacityProperty, FrwdAnim);
+                    WeatherImage.BeginAnimation(OpacityProperty, Anims.FrwdAnim);
                     WeatherImage.Source = new BitmapImage(new Uri(WeatherIcon,UriKind.Relative));
                     WeatherImage.BeginAnimation(OpacityProperty, Anims.RevAnim);
                     TxtDate.Text = DateTime.Now.ToString("dd MMMM yyyy");
@@ -178,7 +183,6 @@ namespace Wpf_Practice
         private void btnInfo_Clicked(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.linkedin.com/in/thakrekuldeep/");
-            btnApply_Click(sender, e);
         }
 
         private void btnApply_Click(object sender, RoutedEventArgs e)
