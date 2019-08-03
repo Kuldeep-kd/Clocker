@@ -18,7 +18,7 @@ namespace Wpf_Practice
         /// <summary>
         /// Initialising the API & Required Stuffs
         /// </summary>
-        DarkSkyApi.DarkSkyService darkSky = new DarkSkyService("Your API Key here");
+        DarkSkyApi.DarkSkyService darkSky = new DarkSkyService("Your API Key Here");
         DarkSkyApi.Models.Forecast x;
         //This finds files in the Resources and generates a Stream.
         XmlDocument xmlDocument = new XmlDocument();
@@ -37,9 +37,10 @@ namespace Wpf_Practice
         {
             InitializeComponent();
 
+            
             Shell32.Shell shell = new Shell32.Shell();
             Shell32.Folder fontFolder = shell.NameSpace(0x14);
-            fontFolder.CopyHere(@"Fonts/District Thin.ttf");
+            fontFolder.CopyHere(@"Fonts/District Thin.ttf"); //Has no effect
             
 
             WindowClock.BeginAnimation(HeightProperty, Anims.StartAnimation);
@@ -183,6 +184,7 @@ namespace Wpf_Practice
         private void btnInfo_Clicked(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.linkedin.com/in/thakrekuldeep/");
+            System.Diagnostics.Process.Start("https://sourceforge.net/projects/clocker");
         }
 
         private void btnApply_Click(object sender, RoutedEventArgs e)

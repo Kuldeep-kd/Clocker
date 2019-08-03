@@ -26,7 +26,7 @@ public class Animations
     public DoubleAnimation HtIncAnim = new DoubleAnimation()
     {
         From = 550,
-        To = 600,
+        To = 630,
         Duration = new Duration(TimeSpan.FromSeconds(0.3)),
         AccelerationRatio = 0.1,
         DecelerationRatio = 0.1
@@ -35,7 +35,7 @@ public class Animations
     //Height Decrease Animation
     public DoubleAnimation HtDecAnim = new DoubleAnimation()
     {
-        From = 600,
+        From = 630,
         To = 550,
         Duration = new Duration(TimeSpan.FromSeconds(0.3)),
         AccelerationRatio = 0.1,
@@ -46,7 +46,7 @@ public class Animations
     public DoubleAnimation StartAnimation = new DoubleAnimation()
     {
         From = 0,
-        To = 530,
+        To = 520,
         Duration = new Duration(TimeSpan.FromSeconds(1.5)),
         AccelerationRatio = 0.5,
         DecelerationRatio = 0.5

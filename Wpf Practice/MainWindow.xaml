@@ -13,13 +13,13 @@
         WindowState="Normal"
         ShowInTaskbar="False"
         Topmost="False"
-        Title="Clocker" Height="550" Width="230">
+        Title="Clocker" Height="540" Width="230">
 
 
     <Border BorderThickness="1.5" BorderBrush="Black" Background="#212121"  CornerRadius="20">
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="20 June 2018" 
-                       FontSize="35" 
+            <TextBlock Text="20 August 2018" 
+                       FontSize="30" 
                        Padding="10"
                        FontFamily="DistrictThin" 
                        HorizontalAlignment="Center"
